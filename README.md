@@ -18,7 +18,7 @@ Modern banking dashboard with AI assistant powered by Groq's Llama 3.3.
 - Recharts
 
 ## 🌐 Live Demo
-[View Demo](https://yourusername.github.io/fintech-demo)
+[View Demo](https://Olando07.github.io/fintech-demo)
 
 ## 📊 Analytics
 Real-time visitor tracking powered by n8n webhooks
