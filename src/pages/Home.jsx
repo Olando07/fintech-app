@@ -12,9 +12,9 @@ export default function Home() {
 				<p className="text-gray-400">Welcome back! Here is your financial overview.</p>
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-8">
 				{statsData.map((stat, index) => {
-					<StatCard key={index} {...stat} />;
+					return <StatCard key={index} {...stat} />
 				})}
 			</div>
 
