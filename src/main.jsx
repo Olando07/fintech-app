@@ -16,7 +16,7 @@ const router = createHashRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, wlwmwnt: <Home /> },
+      { index: true, element: <Home /> },
       { path: "transactions", element: <Transactions /> },
       { path: "analytics", element: <Analytics /> },
       {path: "chat", element: <Chat/>},
