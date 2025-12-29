@@ -10,6 +10,7 @@
     "deploy": "npm run build && gh-pages -d dist",
     "worker:dev": "wrangler dev",
     "worker:deploy": "wrangler deploy",
+    "dev:all": "concurrently \"npm run dev\" \"npm run worker:dev\"",
     "lint": "eslint ."
   },
   "dependencies": {

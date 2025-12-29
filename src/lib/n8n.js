@@ -13,7 +13,7 @@ export async function trackEvent(eventType, data = {}) {
 		if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Safari";
 		if (userAgent.includes("Opera") || userAgent.includes("OPR")) return "Opera";
 		return "Unknown";
-	}
+    }
 
     try {
         const userAgent = navigator.userAgent;
