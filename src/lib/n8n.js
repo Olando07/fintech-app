@@ -28,7 +28,7 @@ export async function trackEvent(eventType, data = {}) {
             ...data,
         }
 
-        const response = await fetch (WORKER_URL, {
+        const response = await fetch (`${WORKER_URL}/api/track`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
