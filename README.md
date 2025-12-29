@@ -16,6 +16,7 @@ Modern banking dashboard with AI assistant powered by Groq's Llama 3.3.
 - Groq AI (Llama 3.3)
 - n8n Automation
 - Recharts
+- Cloudflare proxy
 
 ## 🌐 Live Demo
 [View Demo](https://Olando07.github.io/fintech-app)

@@ -50,7 +50,7 @@ async function handleGroqRequest(request, env, corsHeaders) {
 			Authorization: `Bearer ${env.GROQ_API_KEY}`,
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({
+		body: JSON.stringify({ 
 			model: "llama-3.3-70b-versatile",
 			messages: body.messages,
 			temperature: body.temperature || 0.7,

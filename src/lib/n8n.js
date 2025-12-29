@@ -44,3 +44,7 @@ export async function trackEvent(eventType, data = {}) {
     }
 }
 
+export function trackPageVisit(pageName) {
+    trackEvent("page_visit", { page: pageName });
+}
+
