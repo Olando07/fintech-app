@@ -12,10 +12,9 @@ export async function chatWithGroq(messages) {
 		throw new Error("Groq API key is not configured. Please add VITE_GROQ_API_KEY to your .env.local file");
 	}
 
-	const response = await fetch(GROQ_API_URL, {
+	const response = await fetch(`${GROQ_API_URL}/api/chat`, {
 		method: "POST",
 		headers: {
-			Authorization: `Bearer ${WORKER_URL}/api/chat`,
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
