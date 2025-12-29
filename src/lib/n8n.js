@@ -1,7 +1,7 @@
-const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL
+const WORKER_URL = import.meta.env.VITE_WORKER_URL
 
 export async function trackEvent(eventType, data = {}) {
-    if (!N8N_WEBHOOK_URL) {
+    if (!WORKER_URL) {
         console.log('N8N webhook is not configured')
         return
     }
@@ -28,7 +28,7 @@ export async function trackEvent(eventType, data = {}) {
             ...data,
         }
 
-        const response = await fetch (N8N_WEBHOOK_URL, {
+        const response = await fetch (WORKER_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

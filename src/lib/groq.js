@@ -1,4 +1,4 @@
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
+const WORKER_URL = import.meta.env.VITE_WORKER_URL;
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 /**
@@ -7,7 +7,7 @@ const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
  * @returns {Promise<string>} AI response text
  */
 export async function chatWithGroq(messages) {
-	if (!GROQ_API_KEY) {
+	if (!WORKER_URL) {
 		console.error("❌ GROQ_API_KEY not found in environment variables");
 		throw new Error("Groq API key is not configured. Please add VITE_GROQ_API_KEY to your .env.local file");
 	}
@@ -15,7 +15,7 @@ export async function chatWithGroq(messages) {
 	const response = await fetch(GROQ_API_URL, {
 		method: "POST",
 		headers: {
-			Authorization: `Bearer ${GROQ_API_KEY}`,
+			Authorization: `Bearer ${WORKER_URL}/api/chat`,
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
@@ -27,8 +27,6 @@ export async function chatWithGroq(messages) {
 				},
 				...messages,
 			],
-			temperature: 0.7,
-			max_tokens: 1024,
 		}),
 	});
 
